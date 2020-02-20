@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Table V01</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='{% static "css/history.css" %}' rel='stylesheet' />
+</head>
+
+<body>
+    <div class="limiter">
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead>
+                            <tr class="table100-head">
+                                <th class="column1">Date</th>
+                                <th class="column2">Text</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for text in texts %}
+                                <tr>
+                                    <td class="column1">{{text.date_submitted}}</td>
+                                    <td class="column2">
+                                        <a href="/text/{{text.id}}">
+                                            {{text.text}}
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
