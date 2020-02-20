@@ -6,7 +6,8 @@ class CowEchoForm(forms.ModelForm):
     class Meta:
         model = CowText
         fields = [
-            'text'
+            'text',
+            'template'
         ]
         widgets = {
             'text': forms.TextInput(attrs={'class': 'cow-input'}),
