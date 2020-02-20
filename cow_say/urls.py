@@ -24,5 +24,6 @@ admin.site.register(CowText)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='homepage'),
-    path('history/', views.history)
+    path('history/', views.history),
+    path('text/<int:text_id>', views.text_view)
 ]

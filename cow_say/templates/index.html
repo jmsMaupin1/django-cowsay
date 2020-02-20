@@ -17,12 +17,14 @@
             {% endfor %}
         </pre>
     </div>
-    <form action="" method="post">
-        <div class='form-container'>
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="Submit">
-        </div>
-    </form>
+    {% if form %}
+        <form action="" method="post">
+            <div class='form-container'>
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    {% endif %}
 </body>
 </html>
